@@ -24,7 +24,12 @@ module.exports = {
 
 	testing: {
 		client: 'pg',
-		connection: 'postgresql://localhost/testing',
+		connection: {
+			host: '127.0.0.1',
+			user: 'postgres',
+			password: process.env.DB_URL,
+			database: 'testing'
+		},
 		pool: {
 			min: 2,
 			max: 10
